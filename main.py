@@ -1,9 +1,12 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letters_amonut=len(alphabet)
 
 def encrypt(message, number):
   cipher_txt=''
   for i in message:
     location=alphabet.index(i)+number
+    if location>letters_amonut:
+      location=location%letters_amonut
     cipher_txt+=alphabet[location]
   print(cipher_txt)
 
