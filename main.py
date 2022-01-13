@@ -27,6 +27,6 @@ while working:
   cipher(text, shift, direction)
 
   exit=input('Restart?(Y/N) ').upper()
-  if exit=='N':
+  if exit!='Y':
     working=False
 print("I hope I helped you.")
