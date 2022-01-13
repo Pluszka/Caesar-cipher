@@ -3,15 +3,15 @@ letters_amonut=len(alphabet)
 
 def cipher(message, number, task):
   cipher_txt=''
-  if task=='encode':
-    for i in message:
+  if task=='decode':
+    number*=-1
+  for i in message:
+    if not i in alphabet:
+      cipher_txt+=i
+    else:
       location=alphabet.index(i)+number
       if location>letters_amonut:
         location=location%letters_amonut
-      cipher_txt+=alphabet[location]
-  elif task=='decode':
-    for i in message:
-      location=alphabet.index(i)-number
       cipher_txt+=alphabet[location]
   print(cipher_txt)
 
